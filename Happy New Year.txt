@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World's Best Wishes</title>
+
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:linear-gradient(120deg,#1a1a2e,#16213e,#0f3460);
+    background-size:400% 400%;
+    animation: bgMove 10s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    text-align:center;
+    padding:20px;
+    color:white;
+  }
+  @keyframes bgMove {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+
+  h1{
+    font-size:30px;
+    margin-top:30px;
+    background: linear-gradient(90deg,#ffdd00,#ff00c8,#00eaff);
+    -webkit-background-clip:text;
+    color:transparent;
+    animation: glow 3s infinite alternate;
+  }
+  @keyframes glow{
+    from{text-shadow:0 0 10px #fff;}
+    to{text-shadow:0 0 25px #00e8ff,0 0 50px #ff00c8;}
+  }
+
+  .card{
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.3);
+    backdrop-filter:blur(10px);
+    padding:20px;
+    border-radius:15px;
+    margin-top:40px;
+    animation: pop 1.5s ease;
+  }
+  @keyframes pop{
+    from{transform:scale(0.8);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+  }
+
+  p{font-size:18px;line-height:26px;margin:10px 0;}
+
+  /* Confetti Animation */
+  .confetti{
+    position:fixed;
+    width:10px;height:10px;
+    background:gold;
+    animation: fall 3s linear infinite;
+    top:-10px;
+  }
+  @keyframes fall {
+    to{transform:translateY(120vh) rotate(360deg);}
+  }
+</style>
+</head>
+
+<body>
+
+<h1>🌟 World’s Best Wishes 🌟</h1>
+
+<div class="card">
+  <p>To a truly special person,</p>
+  <p>May your days shine bright, your heart stay happy,  
+     and life bring you success, strength & peace. ✨</p>
+  <p>You deserve respect, kindness, and beautiful moments.</p>
+  <p>— From Me 🌸</p>
+</div>
+
+<!-- Floating Confetti -->
+<script>
+for(let i=0; i<30; i++){
+  let conf = document.createElement("div");
+  conf.className="confetti";
+  conf.style.left=Math.random()*100+"vw";
+  conf.style.background=["#ff005c","#00eaff","#ffe500","#9d00ff"][Math.floor(Math.random()*4)];
+  conf.style.animationDuration=(2+Math.random()*3)+"s";
+  document.body.appendChild(conf);
+}
+</script>
+
+</body>
+</html>
